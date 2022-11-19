@@ -22,7 +22,8 @@ namespace MyRestaurant
         public Repositorio() 
         {
 
-            client = new MongoClient("mongodb+srv://CASS:<12345SERC>@myrestaurandserc.9ekvpfa.mongodb.net/?retryWrites=true&w=majority");
+            client = new MongoClient("mongodb://CASS:12345SERC@ac-klrxkgs-shard-00-00.9ekvpfa.mongodb.net:27017,ac-klrxkgs-shard-00-01.9ekvpfa.mongodb.net:27017,ac-klrxkgs-shard-00-02.9ekvpfa.mongodb.net:27017/?ssl=true&replicaSet=atlas-zn022j-shard-0&authSource=admin&retryWrites=true&w=majority");
+            Console.WriteLine(client.ToString());
             db = client.GetDatabase("MyRestaurantSERC");
         }
 
