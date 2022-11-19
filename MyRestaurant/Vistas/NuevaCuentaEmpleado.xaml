@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:MyRestaurant.Modelos"
+             x:Class="MyRestaurant.Vistas.NuevaCuentaEmpleado"
+             Title="Crear cuenta de administrador">
+    <ContentPage.BindingContext>
+       <models:NuevaCuentaAdmonModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="Email" />
+                <Entry Placeholder="usuario@email.com" Text="{Binding user.Email}"/>
+                <Label Text="Contraseña"/>
+                <Entry IsPassword="True" Text="{Binding Usuario.Password}"/>
+                <Label Text="Repite tu contraseña"/>
+                <Entry IsPassword="True" Text="{Binding Password2}"/>
+                <Label Text="Nombre"/>
+                <Entry Text="{Binding Usuario.Nombres}"/>
+                <Label Text="Apellidos"/>
+                <Entry Text="{Binding Usuario.Apellidos}"/>
+                <Label Text="Puesto"/>
+                <Entry />
+                <Button Style="{StaticResource BtnNormal}" Text="Crear Cuneta" x:Name="btnCrearCuenta" Clicked="btnCrearCuenta_Clicked"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
