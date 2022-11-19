@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
 using System.Linq.Expressions;
+using System.Net;
+using Xamarin.Forms.PlatformConfiguration;
 
 namespace MyRestaurant
 {
@@ -19,6 +21,7 @@ namespace MyRestaurant
         public string Error { get; private set; }
         public Repositorio() 
         {
+
             client = new MongoClient("mongodb+srv://CASS:<12345SERC>@myrestaurandserc.9ekvpfa.mongodb.net/?retryWrites=true&w=majority");
             db = client.GetDatabase("MyRestaurantSERC");
         }
