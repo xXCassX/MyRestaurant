@@ -21,8 +21,6 @@
                 <Entry Text="{Binding Usuario.Nombres}"/>
                 <Label Text="Apellidos"/>
                 <Entry Text="{Binding Usuario.Apellidos}"/>
-                <Label Text="Puesto"/>
-                <Entry />
                 <Button Style="{StaticResource BtnNormal}" Text="Crear Cuneta" x:Name="btnCrearCuenta" Clicked="btnCrearCuenta_Clicked"/>
             </StackLayout>
         </ScrollView>

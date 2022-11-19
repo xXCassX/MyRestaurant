@@ -6,6 +6,7 @@ namespace MyRestaurant.Entidades
 {
     public class Usuario:BaseDTO
     {
+        public string UID { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
         public bool EsAdministrador { get; set; }
