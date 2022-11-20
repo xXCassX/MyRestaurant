@@ -3,11 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MyRestaurant.Vistas.Administrador.MenuAdmon"
              Title="Menú">
-    
-    <ContentPage.Content>
-        <Grid>
-            <!-- RESTAURANTES ASOCIADOS:El admin podra ver y agregar, eliminar o modificar los restaurantes asociados, 
+
+    <!-- RESTAURANTES ASOCIADOS:El admin podra ver y agregar, eliminar o modificar los restaurantes asociados, 
             PEDIDOS: también verá la listas de pedidos realizados, cuando se ingrese el pago el pedido se borrará -->
-        </Grid>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+            
+            </Grid>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

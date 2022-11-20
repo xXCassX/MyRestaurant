@@ -9,7 +9,7 @@ namespace MyRestaurant.Entidades
     {
         public string NumPedido { get; set; }
         public string IdCliente { get; set; }
-        public float MontoT { get; set; }
+        public float MontoT { get; private set; }
     }
 
 }
