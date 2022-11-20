@@ -19,12 +19,12 @@ namespace MyRestaurant.Vistas
 
         private void btnCuentaEmpleado_Clicked(object sender, EventArgs e)
         {
-
+            Navigation.PushAsync(new NuevaCuentaEmpleado());
         }
 
         private void btnCliente_Clicked(object sender, EventArgs e)
         {
-
+            Navigation.PushAsync(new NuevaCuentaCliente());
         }
     }
 }

@@ -2,10 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:models="clr-namespace:MyRestaurant.Modelos"
-             x:Class="MyRestaurant.Vistas.NuevaCuentaEmpleado"
-             Title="Crear cuenta de administrador">
+             x:Class="MyRestaurant.Vistas.NuevaCuentaCliente"
+             Title="Crear cuenta de Cliente">
+
     <ContentPage.BindingContext>
-       <models:NuevaCuentaAdmonModel/>
+        <models:NuevaCuentaClienteModel/>
     </ContentPage.BindingContext>
     
     <ContentPage.Content>
@@ -21,6 +22,8 @@
                 <Entry Text="{Binding Usuario.Nombres}"/>
                 <Label Text="Apellidos"/>
                 <Entry Text="{Binding Usuario.Apellidos}"/>
+                <Label Text="Direccion"/>
+                <Entry Text="{Binding cliente.Direccion}"/>
                 <Button Style="{StaticResource BtnNormal}" Text="Crear Cuenta" x:Name="btnCrearCuenta" Clicked="btnCrearCuenta_Clicked"/>
             </StackLayout>
         </ScrollView>

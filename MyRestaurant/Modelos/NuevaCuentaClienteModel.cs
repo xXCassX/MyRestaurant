@@ -5,16 +5,17 @@ using System.Text;
 
 namespace MyRestaurant.Modelos
 {
-    public class NuevaCuentaAdmonModel
+    internal class NuevaCuentaClienteModel
     {
         public Usuario Usuario { get; set; }
-        
+
+        public Clientes cliente { get; set; }
+
         public string Password2 { get; set; }
 
-        public NuevaCuentaAdmonModel()
+        public NuevaCuentaClienteModel()
         {
             Usuario = new Usuario();
         }
-
     }
 }
