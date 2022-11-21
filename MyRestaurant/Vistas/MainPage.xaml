@@ -8,8 +8,11 @@
     </ContentPage.BindingContext>
     
     
+
+
     <Grid>
         <Grid.RowDefinitions>
+            
             <RowDefinition Height="3*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="0.2*"/>
