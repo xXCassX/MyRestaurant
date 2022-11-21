@@ -2,22 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:models="clr-namespace:MyRestaurant.Modelos"
-             x:Class="MyRestaurant.Vistas.Cliente.MenuClient"
+             xmlns:vistas="clr-namespace:MyRestaurant.Vistas.Cliente"
+             NavigationPage.HasNavigationBar="False"
              Title="Menú">
 
-    <ContentPage.BindingContext>
-        <models:PlatillosModel/>
-    </ContentPage.BindingContext>
-
-    <!-- RESTAURANTES: El cliente podrá ver la lista de restaurantes poder realizar su pedido (al ingresar al restaurante podrá ver el conjunto de comidas y bebidas que hay, y un boton de agregar al carrito), 
-            PEDIDOS REALIZADOS: Verá el pedido o pedidos que realizó y podrá elegir si cancelarlo/s (irá en un icono de la esquina superior derecha)-->
-
-
-    <ContentPage.Content>
-        <ScrollView>
-            <Grid>
-
-            </Grid>
-        </ScrollView>
-    </ContentPage.Content>
+    <Grid>
+       
+        
+    </Grid>
 </ContentPage>
+
+<!-- RESTAURANTES: El cliente podrá ver la lista de restaurantes poder realizar su pedido (al ingresar al restaurante podrá ver el conjunto de comidas y bebidas que hay, y un boton de agregar al carrito), 
+            PEDIDOS REALIZADOS: Verá el pedido o pedidos que realizó y podrá elegir si cancelarlo/s (irá en un icono de la esquina superior derecha)-->
