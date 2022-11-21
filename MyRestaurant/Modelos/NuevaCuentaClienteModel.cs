@@ -7,6 +7,7 @@ namespace MyRestaurant.Modelos
 {
     internal class NuevaCuentaClienteModel
     {
+
         public Usuario Usuario { get; set; }
 
         public Clientes cliente { get; set; }

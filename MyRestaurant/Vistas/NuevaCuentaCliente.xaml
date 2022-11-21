@@ -13,7 +13,7 @@
         <ScrollView>
             <StackLayout>
                 <Label Text="Email" />
-                <Entry Placeholder="usuario@email.com" Text="{Binding user.Email}"/>
+                <Entry Placeholder="usuario@email.com" Text="{Binding Usuario.Email}"/>
                 <Label Text="Contraseña"/>
                 <Entry IsPassword="True" Text="{Binding Usuario.Password}"/>
                 <Label Text="Repite tu contraseña"/>
