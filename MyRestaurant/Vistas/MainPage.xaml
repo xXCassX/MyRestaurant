@@ -19,8 +19,9 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="0.2*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="80"/>
             <RowDefinition Height="0.2*"/>
         </Grid.RowDefinitions>
 
@@ -59,7 +60,8 @@
                 x:Name="btnIniciarSesion" Clicked="btnIniciarSesion_Clicked"
                 Margin="30,0"/>
         
-        <Button Grid.Row="7" Style="{StaticResource BtnAcentuado}" Text="Crear Cuenta"
+        <Button Grid.Row="8" Style="{StaticResource BtnAcentuado}" Text="Crear Cuenta"
+                
                 x:Name="btnCrearCuenta" Clicked="btnCrearCuenta_Clicked"
                 Margin="30,0"/>
     </Grid>
