@@ -10,21 +10,25 @@
     
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="5*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.2*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.2*"/>
         </Grid.RowDefinitions>
 
+        <!--
         <Grid Grid.Row="0"  BackgroundColor="{StaticResource DarkPrimaryColor}">
             <Grid.RowDefinitions>
-                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
         </Grid>
+        -->
         
             <Image Grid.Row="0" Source="Logo.png"
                 BackgroundColor="{StaticResource DarkPrimaryColor}"/>
@@ -32,25 +36,27 @@
             <Label Grid.Row="1" Style="{StaticResource TextTitulo}"
                 BackgroundColor="{StaticResource DarkPrimaryColor}" 
                 TextColor="{StaticResource TextIconsColor}"
-                Text="My Restaurant" HorizontalTextAlignment="Center" VerticalOptions="FillAndExpand"/>
+                Text="My Restaurant" HorizontalTextAlignment="Center" VerticalOptions="FillAndExpand"
+                   VerticalTextAlignment="Center"
+                   />
         
-        <Label Grid.Row="1" HorizontalOptions="Center"
+        <Label Grid.Row="2" HorizontalOptions="Center" VerticalOptions="End"
                Text="Email"/>
-       
-        <Entry Grid.Row="2" Placeholder="Usuario@email.com"
+
+        <Entry Grid.Row="3" Placeholder="Usuario@email.com"
                Text="{Binding Email}" HorizontalTextAlignment="Center"/>
-        
-        <Label Grid.Row="3" HorizontalOptions="Center"
+
+        <Label Grid.Row="4" HorizontalOptions="Center" VerticalOptions="End"
                Text="Contraseña"/>
         
-        <Entry Grid.Row="4" IsPassword="True"
+        <Entry Grid.Row="5" IsPassword="True"
                Text="{Binding Password}" HorizontalTextAlignment="Center"/>
         
-        <Button Grid.Row="5" Style="{StaticResource BtnNormal}" Text="Iniciar Sesión"
+        <Button Grid.Row="6" Style="{StaticResource BtnNormal}" Text="Iniciar Sesión"
                 x:Name="btnIniciarSesion" Clicked="btnIniciarSesion_Clicked"
                 Margin="30,0"/>
         
-        <Button Grid.Row="6" Style="{StaticResource BtnAcentuado}" Text="Crear Cuenta"
+        <Button Grid.Row="7" Style="{StaticResource BtnAcentuado}" Text="Crear Cuenta"
                 x:Name="btnCrearCuenta" Clicked="btnCrearCuenta_Clicked"
                 Margin="30,0"/>
     </Grid>

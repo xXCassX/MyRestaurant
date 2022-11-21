@@ -5,18 +5,20 @@
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
+                <RowDefinition Height="200"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
+                <RowDefinition Height="50"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Label Grid.Row="0" Text="Eres dueño o empleado: "/>
-            <Button Grid.Row="1" Text="Crear Cuenta" Style="{StaticResource BtnNormal}" x:Name="btnCuentaEmpleado" Clicked="btnCuentaEmpleado_Clicked"/>
-            <Label Grid.Row="2" Text="Eres cliente: "/>
-            <Button Grid.Row="3" Text="Crear Cuenta" Style="{StaticResource BtnNormal}" x:Name="btnCliente" Clicked="btnCliente_Clicked"/>
-            <Label Grid.Row="4" />
+            <Label Grid.Row="1" Text="Eres dueño o empleado: " HorizontalTextAlignment="Center" FontSize="20"/>
+            <Button Grid.Row="2" Text="Crear Cuenta" Style="{StaticResource BtnNormal}" x:Name="btnCuentaEmpleado" Clicked="btnCuentaEmpleado_Clicked"/>
+            <Label Grid.Row="4" Text="Eres cliente: " HorizontalTextAlignment="Center" FontSize="20"/>
+            <Button Grid.Row="5" Text="Crear Cuenta" Style="{StaticResource BtnNormal}" x:Name="btnCliente" Clicked="btnCliente_Clicked"/>
+            <Label Grid.Row="6" />
         </Grid>
     </ContentPage.Content>
 </ContentPage>
