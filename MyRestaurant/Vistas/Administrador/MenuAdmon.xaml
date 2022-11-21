@@ -1,17 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:MyRestaurant.Modelos"
              x:Class="MyRestaurant.Vistas.Administrador.MenuAdmon"
              Title="Menú">
 
     <!-- RESTAURANTES ASOCIADOS:El admin podra ver y agregar, eliminar o modificar los restaurantes asociados, 
             PEDIDOS: también verá la listas de pedidos realizados, cuando se ingrese el pago el pedido se borrará -->
 
+    
+    
     <ContentPage.Content>
-        <ScrollView>
-            <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="230"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="100"/>
+
+            </Grid.RowDefinitions>
             
-            </Grid>
-        </ScrollView>
+            <Button Grid.Row="1" Style="{StaticResource BtnNormal}" Text="Restaurantes Asociados" x:Name="btnResAs" Clicked="btnResAs_Clicked"/>
+            <Button Grid.Row="3" Style="{StaticResource BtnNormal}" Text="Pedidos" x:Name="btnPedidos" Clicked="btnPedidos_Clicked"/>
+        </Grid>
     </ContentPage.Content>
+    
 </ContentPage>

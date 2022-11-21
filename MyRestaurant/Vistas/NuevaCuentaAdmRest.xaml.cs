@@ -11,18 +11,16 @@ using Xamarin.Forms.Xaml;
 
 namespace MyRestaurant.Vistas
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class NuevaCuentaEmpleado : ContentPage
-    {
-        NuevaCuentaAdmonModel model;
-        Repositorio<Usuario> usuarioRepositorio;
-        
-        public NuevaCuentaEmpleado()
-        {
-            InitializeComponent();
-            model = BindingContext as NuevaCuentaAdmonModel;
-            usuarioRepositorio = new Repositorio<Usuario>();
-            
+	[XamlCompilation(XamlCompilationOptions.Compile)]
+	public partial class NuevaCuentaAdmRest : ContentPage
+	{
+        Repositorio<Usuario> repositorioUser;
+        NuevaCuentaAdmRestModel model;
+        public NuevaCuentaAdmRest ()
+		{
+			InitializeComponent ();
+            model = BindingContext as NuevaCuentaAdmRestModel;
+            repositorioUser = new Repositorio<Usuario>();
         }
 
         private void btnCrearCuenta_Clicked(object sender, EventArgs e)
@@ -35,31 +33,32 @@ namespace MyRestaurant.Vistas
             {
                 if (model.Password2 == model.Usuario.Password)
                 {
-                    if (string.IsNullOrEmpty(model.Usuario.Email) || string.IsNullOrEmpty(model.Usuario.Nombres) || string.IsNullOrEmpty(model.Usuario.Apellidos))
+                    if (string.IsNullOrEmpty(model.Usuario.Email) || string.IsNullOrEmpty(model.Usuario.Nombres))
                     {
                         DisplayAlert("Nueva Cuenta", "Hay datos faltantes", "Ok");
                     }
-                    else 
+                    else
                     {
-                        model.Usuario.EsAdministrador = true;
-                        model.Usuario.EsAdmonRestaurant = false;
-                        Usuario u = usuarioRepositorio.Create(model.Usuario);
+                        model.Usuario.EsAdministrador = false;
+                        model.Usuario.EsAdmonRestaurant = true;
+                        Usuario u = repositorioUser.Create(model.Usuario);
                         if (u != null)
                         {
+
                             DisplayAlert("Éxito", "Tu cuenta ha sido creada, ya puede iniciar sesión", "Ok");
+
                         }
                         else
                         {
-                            DisplayAlert("Error", usuarioRepositorio.Error, "Ok");
+                            DisplayAlert("Error", repositorioUser.Error, "Ok");
                         }
                     }
                 }
-                else 
+                else
                 {
                     DisplayAlert("Nueva Cuenta", "Las contraseñas no coinciden", "Ok");
                 }
             }
-
         }
     }
 }

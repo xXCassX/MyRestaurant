@@ -11,6 +11,9 @@
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
@@ -18,7 +21,8 @@
             <Button Grid.Row="2" Text="Crear Cuenta" Style="{StaticResource BtnNormal}" x:Name="btnCuentaEmpleado" Clicked="btnCuentaEmpleado_Clicked"/>
             <Label Grid.Row="4" Text="Eres cliente: " HorizontalTextAlignment="Center" FontSize="20"/>
             <Button Grid.Row="5" Text="Crear Cuenta" Style="{StaticResource BtnNormal}" x:Name="btnCliente" Clicked="btnCliente_Clicked"/>
-            <Label Grid.Row="6" />
+            <Label Grid.Row="7" Text="Eres Administrador de un restaurante: " HorizontalTextAlignment="Center" FontSize="20"/>
+            <Button Grid.Row="8" Text="Crear Cuenta" Style="{StaticResource BtnNormal}" x:Name="btnRestaurante" Clicked="btnRestaurante_Clicked"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

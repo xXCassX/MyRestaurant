@@ -2,13 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:models="clr-namespace:MyRestaurant.Modelos"
-             x:Class="MyRestaurant.Vistas.NuevaCuentaCliente"
-             Title="Crear cuenta de Cliente">
-
+             x:Class="MyRestaurant.Vistas.NuevaCuentaAdmRest"
+              Title="Crear cuenta de administrador de restaurante">
+   
     <ContentPage.BindingContext>
-        <models:NuevaCuentaClienteModel/>
+        <models:NuevaCuentaAdmRestModel/>
     </ContentPage.BindingContext>
-    
+
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
@@ -16,13 +16,10 @@
                 <Entry Placeholder="usuario@email.com" Text="{Binding Usuario.Email}"/>
                 <Label Text="Contraseña"/>
                 <Entry IsPassword="True" Text="{Binding Usuario.Password}"/>
-                <Label Text="Repite tu contraseña"/>
+                <Label Text="Repite la contraseña"/>
                 <Entry IsPassword="True" Text="{Binding Password2}"/>
-                <Label Text="Nombre"/>
+                <Label Text="Nombre del restaurante"/>
                 <Entry Text="{Binding Usuario.Nombres}"/>
-                <Label Text="Apellidos"/>
-                <Entry Text="{Binding Usuario.Apellidos}"/>
-                
                 <Button Style="{StaticResource BtnNormal}" Text="Crear Cuenta" x:Name="btnCrearCuenta" Clicked="btnCrearCuenta_Clicked"/>
             </StackLayout>
         </ScrollView>

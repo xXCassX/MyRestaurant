@@ -26,5 +26,10 @@ namespace MyRestaurant.Vistas
         {
             Navigation.PushAsync(new NuevaCuentaCliente());
         }
+
+        private void btnRestaurante_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new NuevaCuentaAdmRest());
+        }
     }
 }

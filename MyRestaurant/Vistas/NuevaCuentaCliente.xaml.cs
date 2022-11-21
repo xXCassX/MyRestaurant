@@ -36,25 +36,20 @@ namespace MyRestaurant.Vistas
             {
                 if (model.Password2 == model.Usuario.Password)
                 {
-                    if (string.IsNullOrEmpty(model.Usuario.Email) || string.IsNullOrEmpty(model.Usuario.Nombres) || string.IsNullOrEmpty(model.Usuario.Apellidos) || string.IsNullOrEmpty(model.cliente.Direccion))
+                    if (string.IsNullOrEmpty(model.Usuario.Email) || string.IsNullOrEmpty(model.Usuario.Nombres) || string.IsNullOrEmpty(model.Usuario.Apellidos))
                     {
                         DisplayAlert("Nueva Cuenta", "Hay datos faltantes", "Ok");
                     }
                     else
                     {
                         model.Usuario.EsAdministrador = false;
+                        model.Usuario.EsAdmonRestaurant = false;
                         Usuario u = repositorioUsuario.Create(model.Usuario);
                         if (u != null)
                         {
-                            model.cliente.UID = u.Id;
-                            if (repositorioClientes.Create(model.cliente) != null)
-                            {
-                                DisplayAlert("Éxito", "Tu cuenta ha sido creada, ya puede iniciar sesión", "Ok");
-                            }
-                            else 
-                            {
-                                DisplayAlert("Error", repositorioClientes.Error, "Ok");
-                            }
+                           
+                            DisplayAlert("Éxito", "Tu cuenta ha sido creada, ya puede iniciar sesión", "Ok");
+                            
                         }
                         else
                         {
