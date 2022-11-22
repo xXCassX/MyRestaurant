@@ -60,5 +60,10 @@ namespace MyRestaurant.Vistas
                 }
             }
         }
+
+        private void btn_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }
