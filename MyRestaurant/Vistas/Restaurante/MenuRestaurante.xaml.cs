@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MyRestaurant.Entidades;
+using MyRestaurant.Modelos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +14,13 @@ namespace MyRestaurant.Vistas.Restaurante
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MenuRestaurante : ContentPage
 	{
-		public MenuRestaurante ()
+
+		Usuario restAdm;
+		public MenuRestaurante (Usuario restAdm)
 		{
-			InitializeComponent ();
-		}
+            InitializeComponent();
+            this.restAdm = restAdm;
+			BindingContext = new MenuRestModel (restAdm);
+        }
 	}
 }

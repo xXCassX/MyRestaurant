@@ -2,6 +2,7 @@
 using MyRestaurant.Modelos;
 using MyRestaurant.Vistas;
 using MyRestaurant.Vistas.Administrador;
+using MyRestaurant.Vistas.Restaurante;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -40,6 +41,7 @@ namespace MyRestaurant
                 else if (user.EsAdmonRestaurant)
                 {
                     //Mandar a pantalla de restaurante admin
+                    Navigation.PushAsync(new MenuRestaurante(user));
                 }
                 else 
                 {

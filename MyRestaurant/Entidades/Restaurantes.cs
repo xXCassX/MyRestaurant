@@ -8,7 +8,6 @@ namespace MyRestaurant.Entidades
     {
 
         public string NombreRes { get; set; }
-        public string ColleccionPlatillosYBebidas { get; set; }
 
     }
 }

@@ -4,10 +4,9 @@ using System.Text;
 
 namespace MyRestaurant.Entidades
 {
-    class Platillos : Restaurantes
+    public class Platillos : BaseDTO
     {
-        public string descripcionP { get; set; }
+        public string nombreP { get; set; }
         public string precioP { get; set; }
-        public string iconoP { get; set; }
     }
 }
