@@ -15,12 +15,20 @@ namespace MyRestaurant.Vistas
 	public partial class NuevaCuentaAdmRest : ContentPage
 	{
         Repositorio<Usuario> repositorioUser;
+        Repositorio<Restaurantes> repositorioRest;
         NuevaCuentaAdmRestModel model;
+         
+
         public NuevaCuentaAdmRest ()
 		{
 			InitializeComponent ();
-            model = BindingContext as NuevaCuentaAdmRestModel;
             repositorioUser = new Repositorio<Usuario>();
+            repositorioRest = new Repositorio<Restaurantes>();
+            model = BindingContext as NuevaCuentaAdmRestModel;
+
+
+
+            
         }
 
         private void btnCrearCuenta_Clicked(object sender, EventArgs e)
@@ -41,12 +49,16 @@ namespace MyRestaurant.Vistas
                     {
                         model.Usuario.EsAdministrador = false;
                         model.Usuario.EsAdmonRestaurant = true;
-                        Usuario u = repositorioUser.Create(model.Usuario);
+                        Usuario u = repositorioUser.Create(model.Usuario);                       
                         if (u != null)
                         {
 
                             DisplayAlert("Éxito", "Tu cuenta ha sido creada, ya puede iniciar sesión", "Ok");
-
+                            model.Restaurantes.NombreRes = u.Nombres;
+                            if (repositorioRest.Create(model.Restaurantes) != null)
+                            {
+                                Console.WriteLine("Jaja, simón");
+                            }
                         }
                         else
                         {

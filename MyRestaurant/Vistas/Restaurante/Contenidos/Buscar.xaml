@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:restaurante="clr-namespace:MyRestaurant.Vistas.Restaurante" 
+             xmlns:models="clr-namespace:MyRestaurant.Modelos"
+             x:Class="MyRestaurant.Vistas.Restaurante.Contenidos.Buscar"
+             Title="Buscar"
+             >
+
+    <ContentPage.BindingContext>
+        <models:PlatillosModel/>
+    </ContentPage.BindingContext>
+
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+            
+                <Label Text="Nombre del platillo"/>
+                <Entry Text="{Binding nombreP}" HorizontalTextAlignment="Start"/>
+                <Label Text="Precio del platillo"/>
+                <Entry Text="{Binding precioP}" HorizontalTextAlignment="Start"/>
+                <Button Style="{StaticResource BtnGuardar}" Text="Modificar" x:Name="btnModificarPlatillo" Clicked="btnModificarPlatillo_Clicked"/>
+                <Button Style="{StaticResource BtnGuardar}" Text="Eliminar" x:Name="btnEliminarPlatillo" Clicked="btnEliminarPlatillo_Clicked"/>
+                
+                <Grid>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Nombre" Grid.Row="0" Grid.Column="0" TextColor="Gray" HorizontalTextAlignment="Center"/>
+                    <Label Text="Precio" Grid.Row="0" Grid.Column="1" TextColor="Gray" HorizontalTextAlignment="Center"/>
+                    <Label Text="{Binding nombreP}" Grid.Row="1" Grid.Column="0" TextColor="Gray"/>
+                    <Label Text="{Binding precioP}" Grid.Row="1" Grid.Column="1" TextColor="Gray"/>
+                </Grid>
+                
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

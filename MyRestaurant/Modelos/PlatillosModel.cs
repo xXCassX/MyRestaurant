@@ -8,15 +8,7 @@ namespace MyRestaurant.Modelos
 {
     public class PlatillosModel
     {
-        
-        ObservableCollection<Platillos> LPlatillos {get; set;}
-
-        public PlatillosModel()
-        {
-            LPlatillos = new ObservableCollection<Platillos>
-            {
-               
-            };        
-        } 
+        public string nombreP { set; get; }
+        public string precioP { set; get; }
     }
 }

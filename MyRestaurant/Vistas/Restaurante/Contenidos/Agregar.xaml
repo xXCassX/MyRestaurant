@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:models="clr-namespace:MyRestaurant.Modelos"
+             x:Class="MyRestaurant.Vistas.Restaurante.Contenidos.Agregar"
+             Title="Agregar"
+             >
+    <ContentPage.BindingContext>
+        <models:PlatillosModel/>
+    </ContentPage.BindingContext>
+    
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Nombre del platillo"/>
+            <Entry Text="{Binding nombreP}" HorizontalTextAlignment="Start"/>
+            <Label Text="Precio del platillo"/>
+            <Entry Text="{Binding precioP}" HorizontalTextAlignment="Start"/>
+            <Button Style="{StaticResource BtnGuardar}" Text="Guardar" x:Name="btnAgregarPlatillo" 
+                    Clicked="btnAgregarPlatillo_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
