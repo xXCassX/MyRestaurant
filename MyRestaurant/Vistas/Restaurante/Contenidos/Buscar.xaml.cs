@@ -32,10 +32,6 @@ namespace MyRestaurant.Vistas.Restaurante.Contenidos
             platillosListView.ItemsSource = platillos;
         }
      
-        public void actualizarLista()
-        {
-            restaurant = repositorioRest.Query(r => r.NombreRes == admin.Nombres).SingleOrDefault();
-        }
 
         private void btnModificarPlatillo_Clicked(object sender, EventArgs e)
         {
@@ -46,7 +42,7 @@ namespace MyRestaurant.Vistas.Restaurante.Contenidos
                 restaurant.Platillos = platillos;
                 repositorioRest.Update(restaurant);
                 DisplayAlert("Éxito", "Se ha modificado el platillo", "okay");
-                actualizarLista();
+
             }
             else
             {
@@ -80,6 +76,16 @@ namespace MyRestaurant.Vistas.Restaurante.Contenidos
         private void entryPrecio_Unfocused(object sender, FocusEventArgs e)
         {
             temp.precioP=entryPrecio.Text;
+        }
+
+        private async void RefreshView_Refreshing(object sender, EventArgs e)
+        {
+            await Task.Delay(1000);
+            restaurant = repositorioRest.Query(r => r.NombreRes == admin.Nombres).SingleOrDefault();
+            platillos = restaurant.Platillos;
+            platillosListView.ItemsSource = platillos;
+            recarga.IsRefreshing = false;
+
         }
     }
 }

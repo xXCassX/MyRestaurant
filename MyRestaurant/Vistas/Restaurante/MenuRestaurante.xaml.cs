@@ -28,6 +28,5 @@ namespace MyRestaurant.Vistas.Restaurante
 			Children.Add(new Buscar(restAdm));
 			Title=restAdm.Nombres.ToString();
         }
-
     }
 }
