@@ -8,7 +8,7 @@ namespace MyRestaurant.Modelos
     class RestaurantModel
     {
         public Restaurantes restaurantes { get; set; }
-        public Platillos Platillos { get; set; }
+        public List<Platillos> platillos { get; set; }
 
     }
 }

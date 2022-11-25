@@ -8,7 +8,7 @@
              >
 
     <ContentPage.BindingContext>
-        <models:PlatillosModel/>
+        <models:RestaurantModel/>
     </ContentPage.BindingContext>
 
 
@@ -17,9 +17,9 @@
             <StackLayout>
             
                 <Label Text="Nombre del platillo"/>
-                <Entry Text="{Binding nombreP}" HorizontalTextAlignment="Start"/>
+                <Entry Text="" HorizontalTextAlignment="Start" x:Name="entryPlatillo" Unfocused="entryPlatillo_Unfocused"/>
                 <Label Text="Precio del platillo"/>
-                <Entry Text="{Binding precioP}" HorizontalTextAlignment="Start"/>
+                <Entry Text="" HorizontalTextAlignment="Start" x:Name="entryPrecio" Unfocused="entryPrecio_Unfocused"/>
                 <Button Style="{StaticResource BtnGuardar}" Text="Modificar" x:Name="btnModificarPlatillo" Clicked="btnModificarPlatillo_Clicked"/>
                 <Button Style="{StaticResource BtnGuardar}" Text="Eliminar" x:Name="btnEliminarPlatillo" Clicked="btnEliminarPlatillo_Clicked"/>
                 
@@ -34,12 +34,28 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Label Text="Nombre" Grid.Row="0" Grid.Column="0" TextColor="Gray" HorizontalTextAlignment="Center"/>
-                    <Label Text="Precio" Grid.Row="0" Grid.Column="1" TextColor="Gray" HorizontalTextAlignment="Center"/>
-                    <Label Text="{Binding nombreP}" Grid.Row="1" Grid.Column="0" TextColor="Gray"/>
-                    <Label Text="{Binding precioP}" Grid.Row="1" Grid.Column="1" TextColor="Gray"/>
+                    <Label Text="Nombre" Grid.Row="0" Grid.Column="0" TextColor="White" HorizontalTextAlignment="Center" BackgroundColor="{StaticResource DarkPrimaryColor}"/>
+                    <Label Text="Precio" Grid.Row="0" Grid.Column="1" TextColor="white" HorizontalTextAlignment="Center" BackgroundColor="{StaticResource DarkPrimaryColor}"/>
+
+
                 </Grid>
-                
+                <ListView x:Name="platillosListView"
+                          HasUnevenRows="True"
+                          SeparatorVisibility="None"
+                          ItemTapped="platillosListView_ItemTapped"
+                          >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid RowSpacing="1" >
+                                    <Label Text="{Binding nombreP}" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    <Label Text="{Binding precioP}" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

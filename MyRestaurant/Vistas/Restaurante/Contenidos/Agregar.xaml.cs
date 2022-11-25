@@ -2,6 +2,7 @@
 using MyRestaurant.Modelos;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,7 @@ namespace MyRestaurant.Vistas.Restaurante.Contenidos
         Restaurantes restaurant;
 		PlatillosModel model;
 		Platillos platillo=new Platillos();
+        ObservableCollection<Platillos> platillos = new ObservableCollection<Platillos>();
         public Usuario admin;
 		
 		
@@ -40,9 +42,10 @@ namespace MyRestaurant.Vistas.Restaurante.Contenidos
 			else {
 				platillo.nombreP=model.nombreP.ToString();
 				platillo.precioP=model.precioP.ToString();
-				restaurant.Platillos.Add(platillo);
+				platillos.Add(platillo);
+				restaurant.Platillos=platillos;
 				repositorioRest.Update(restaurant);
-                DisplayAlert("Yay!", "Se ha agregado el platillo", "Okay");
+                DisplayAlert("Éxito", "Se ha agregado el platillo", "Okay");
 				
             }
 			

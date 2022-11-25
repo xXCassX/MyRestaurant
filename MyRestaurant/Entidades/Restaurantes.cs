@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace MyRestaurant.Entidades
@@ -9,10 +10,10 @@ namespace MyRestaurant.Entidades
 
         public string NombreRes { get; set; }
 
-        public List<Platillos> Platillos { get; set;}
+        public ObservableCollection<Platillos> Platillos { get; set;}
 
         public Restaurantes() {
-            Platillos= new List<Platillos>();
+                Platillos= new ObservableCollection<Platillos>();
         }
 
     }
