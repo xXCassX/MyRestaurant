@@ -38,10 +38,13 @@ namespace MyRestaurant.Vistas.Restaurante.Contenidos
                 DisplayAlert("Error", "No pueden haber campos vacíos", "Okay");
 			}
 			else {
+				platillo=new Platillos();
 				platillo.nombreP=model.nombreP.ToString();
 				platillo.precioP=model.precioP.ToString();
+
 				restaurant.Platillos.Add(platillo);
 				repositorioRest.Update(restaurant);
+                restaurant = repositorioRest.Query(r => r.NombreRes == admin.Nombres).SingleOrDefault();
                 DisplayAlert("Éxito", "Se ha agregado el platillo", "Okay");
 				
             }
