@@ -30,7 +30,6 @@ namespace MyRestaurant.Vistas.Restaurante.Contenidos
             restaurant = repositorioRest.Query(r => r.NombreRes == usuario.Nombres).SingleOrDefault();            
             platillos= restaurant.Platillos;
             platillosListView.ItemsSource = platillos;
-            
         }
      
         public void actualizarLista()
